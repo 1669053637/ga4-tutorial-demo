@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PM84XLGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<title>教程演示 · 联系我们（测试页）</title>
+<style>body{font-family:sans-serif;max-width:640px;margin:40px auto;padding:0 20px;color:#14161c;background:#fbfaf7}h1{font-size:24px}form{border:1px solid #ddd;background:#fff;padding:20px;margin:24px 0;border-radius:12px}label{display:block;margin:10px 0 4px}input,textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px}button{background:#ff541a;color:#fff;border:0;padding:12px 24px;border-radius:8px;font-size:16px;cursor:pointer;margin-top:12px}#ajax-ok{display:none;background:#e6f4ea;padding:12px;border-radius:8px;margin-top:12px}.note{color:#666;font-size:14px}</style>
+</head>
+<body>
+<h1>教程演示 · 联系我们</h1>
+<p class="note">这是一个测试页，只用于 GA4 / GTM 教程演示，不接真实业务，不收集真实询盘。</p>
+
+<form id="form-a" action="https://muse.ai/files/1338784829324049/2021472995190519/l2zf59671hw93w2ox1weydgz/thank-you.html" method="get">
+<h2>A 表单：提交后跳转到感谢页</h2>
+<label>姓名 <input name="name" value="测试用户"></label>
+<label>邮箱 <input name="email" value="test@example.com"></label>
+<label>需求 <textarea name="msg">想咨询独立站代运营。</textarea></label>
+<button type="submit">提交（跳转）</button>
+</form>
+
+<form id="form-b">
+<h2>B 表单：提交后原地弹提示（AJAX）</h2>
+<label>姓名 <input name="name" value="测试用户"></label>
+<label>邮箱 <input name="email" value="test@example.com"></label>
+<label>需求 <textarea name="msg">想咨询独立站代运营。</textarea></label>
+<button type="submit">提交（不跳转）</button>
+<div id="ajax-ok">✓ 已发送，我们会尽快联系你。（测试提示，无真实发送）</div>
+</form>
+<script>
+document.getElementById('form-b').addEventListener('submit', function (e) {
+  e.preventDefault();
+  document.getElementById('ajax-ok').style.display = 'block';
+  if (window.dataLayer) { window.dataLayer.push({event: 'form_submit_success'}); }
+});
+</script>
+</body>
+</html>
